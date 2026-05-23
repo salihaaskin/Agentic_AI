@@ -1,11 +1,5 @@
 # Construction Safety AI Agent — RAG Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
-![Claude API](https://img.shields.io/badge/Anthropic_Claude_API-CC785C?style=flat&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_DB-6E40C9?style=flat)
-![Status](https://img.shields.io/badge/Phase_4-Complete-brightgreen)
-
 > **An agentic AI assistant that answers construction safety and OSHA compliance questions in real time — grounded entirely in verified source documents.**
 
 ---
