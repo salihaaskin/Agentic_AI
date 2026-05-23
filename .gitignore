@@ -8,3 +8,4 @@ __pycache__/
 .Rhistory
 demos/
 data preperation/
+.streamlit/secrets.toml

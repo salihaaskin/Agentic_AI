@@ -3,7 +3,25 @@ import requests
 from datetime import datetime
 import time
 
-API_URL = "http://localhost:8000/ask"
+APP_PASSWORD = st.secrets["APP_PASSWORD"] 
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+if not st.session_state.logged_in:
+    st.title("Login")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if password == APP_PASSWORD:
+            st.session_state.logged_in = True
+            st.rerun()
+        else:
+            st.error("Wrong password")
+
+    st.stop()
+
+API_URL = st.secrets["API_URL"]
 
 st.set_page_config(
     page_title="Construction Safety Assistant", page_icon="🏗️", layout="centered"

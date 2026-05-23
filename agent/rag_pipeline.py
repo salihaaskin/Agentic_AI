@@ -27,7 +27,7 @@ class RAGPipeline:
         self.claude = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
         # Load system prompt
-        with open("agent/system_prompt.txt", "r") as f:
+        with open("agent/system_prompt.txt", "r", encoding="utf-8") as f:
             self.system_prompt_template = f.read()
 
         # Settings
@@ -108,7 +108,7 @@ class RAGPipeline:
 
         # Step 5: Call Claude API
         message = self.claude.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-5-20250929",
             max_tokens=1024,
             temperature=0.0,
             messages=messages,
