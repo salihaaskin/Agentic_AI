@@ -311,8 +311,14 @@ if prompt := st.chat_input("Ask a construction safety question..."):
                 response = requests.post(
                     API_URL,
                     json={"question": prompt, "history": history},
-                    timeout=30,
+                    timeout=120,
                 )
+
+                st.write("API_URL:", API_URL)
+                st.write("Status:", response.status_code)
+                st.write("Raw response:", response.text)
+
+                response.raise_for_status()
                 data = response.json()
 
             # Streaming effect
@@ -398,4 +404,4 @@ if prompt := st.chat_input("Ask a construction safety question..."):
                 f"Backend not running. Start it with:\nuvicorn api.main:app --reload --port 8000\n\nError: {e}"
             )
 
-    st.rerun()
+    # st.rerun()
