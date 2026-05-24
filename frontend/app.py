@@ -314,9 +314,9 @@ if prompt := st.chat_input("Ask a construction safety question..."):
                     timeout=120,
                 )
 
-                st.write("API_URL:", API_URL)
-                st.write("Status:", response.status_code)
-                st.write("Raw response:", response.text)
+                # st.write("API_URL:", API_URL)
+                # st.write("Status:", response.status_code)
+                # st.write("Raw response:", response.text)
 
                 response.raise_for_status()
                 data = response.json()
